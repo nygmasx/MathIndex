@@ -25,6 +25,10 @@ class File
     #[ORM\Column]
     private ?int $size = null;
 
+    #[ORM\ManyToOne(inversedBy: 'exerciseFile')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Exercise $exercise = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +78,18 @@ class File
     public function setSize(int $size): static
     {
         $this->size = $size;
+
+        return $this;
+    }
+
+    public function getExercise(): ?Exercise
+    {
+        return $this->exercise;
+    }
+
+    public function setExercise(?Exercise $exercise): static
+    {
+        $this->exercise = $exercise;
 
         return $this;
     }

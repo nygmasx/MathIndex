@@ -25,9 +25,13 @@ class Course
     #[ORM\OneToMany(mappedBy: 'course', targetEntity: Skill::class)]
     private Collection $skills;
 
+    #[ORM\OneToMany(mappedBy: 'course', targetEntity: Exercise::class)]
+    private Collection $exercises;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
+        $this->exercises = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -83,6 +87,36 @@ class Course
             // set the owning side to null (unless already changed)
             if ($skill->getCourse() === $this) {
                 $skill->setCourse(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Exercise>
+     */
+    public function getExercises(): Collection
+    {
+        return $this->exercises;
+    }
+
+    public function addExercise(Exercise $exercise): static
+    {
+        if (!$this->exercises->contains($exercise)) {
+            $this->exercises->add($exercise);
+            $exercise->setCourse($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExercise(Exercise $exercise): static
+    {
+        if ($this->exercises->removeElement($exercise)) {
+            // set the owning side to null (unless already changed)
+            if ($exercise->getCourse() === $this) {
+                $exercise->setCourse(null);
             }
         }
 

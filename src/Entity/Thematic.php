@@ -21,9 +21,13 @@ class Thematic
     #[ORM\OneToMany(mappedBy: 'thematic', targetEntity: Course::class)]
     private Collection $course;
 
+    #[ORM\OneToMany(mappedBy: 'thematic', targetEntity: Exercise::class)]
+    private Collection $exercises;
+
     public function __construct()
     {
         $this->course = new ArrayCollection();
+        $this->exercises = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -67,6 +71,36 @@ class Thematic
             // set the owning side to null (unless already changed)
             if ($course->getThematic() === $this) {
                 $course->setThematic(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Exercise>
+     */
+    public function getExercises(): Collection
+    {
+        return $this->exercises;
+    }
+
+    public function addExercise(Exercise $exercise): static
+    {
+        if (!$this->exercises->contains($exercise)) {
+            $this->exercises->add($exercise);
+            $exercise->setThematic($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExercise(Exercise $exercise): static
+    {
+        if ($this->exercises->removeElement($exercise)) {
+            // set the owning side to null (unless already changed)
+            if ($exercise->getThematic() === $this) {
+                $exercise->setThematic(null);
             }
         }
 
