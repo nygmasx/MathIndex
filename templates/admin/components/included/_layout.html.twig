@@ -15,7 +15,7 @@
 
     </div>
 
-     <div class="flex justify-center flex-col gap-15">
+     <div class="flex  flex-col gap-[10px] mt-10 ml-8 h-[525px]">
     
         {% include "admin/components/included/_menu.html.twig" with {
             image_name : "assets/home_icon.png",
@@ -40,6 +40,15 @@
         {% include "admin/components/included/_menu.html.twig" with {
             image_name : "assets/submit_icon.png",
             page_name : "Soumettre",
+        } %}
+
+    </div>
+
+    <div class="top-0 ml-8 bg-gray-200 rounded-md">
+
+        {% include "admin/components/included/_menu.html.twig" with {
+                image_name : "assets/disconnect_icon.png",
+                page_name : "Déconnexion",
         } %}
 
     </div>
