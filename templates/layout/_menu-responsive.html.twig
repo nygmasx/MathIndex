@@ -25,25 +25,51 @@
                     </nav>
             </div>
 
-            <div class="flex">
-
-                {% include "layout/_composant-menu-responsive.html.twig" with {
-                default_img : "assets/home_icon.png",
-                menu_name : "",
-                } %}
-
-            </div>
-
-            
-
-  
-
      {# Deuxième partie du menu avec scroll et les différentes sections #}
 
-    <div class="">
-   
+     <div class="whitespace-nowrap overflow-auto  bg-slate-50 ">
+        
+            {% include "layout/_composant-menu-responsive.html.twig" with {
+                default_img : "assets/home_icon.png",
+                menu_name : "Contributeurs",
+            } %}
+
+            {% include "layout/_composant-menu-responsive.html.twig" with {
+                default_img : "assets/home_icon.png",
+                menu_name : "Exercices",
+            } %}
+
+            {% include "layout/_composant-menu-responsive.html.twig" with {
+                default_img : "assets/home_icon.png",
+                menu_name : "Matières",
+            } %}
+
+            {% include "layout/_composant-menu-responsive.html.twig" with {
+                default_img : "assets/home_icon.png",
+                menu_name : "Classes",
+            } %}
+
+            {% include "layout/_composant-menu-responsive.html.twig" with {
+                default_img : "assets/home_icon.png",
+                menu_name : "Thématiques",
+            } %}
+
+            {% include "layout/_composant-menu-responsive.html.twig" with {
+                default_img : "assets/home_icon.png",
+                menu_name : "Compétences",
+            } %}
+
+            {% include "layout/_composant-menu-responsive.html.twig" with {
+                default_img : "assets/home_icon.png",
+                menu_name : "Origines",
+            } %}
+
+
+
 
     </div>
+
+
 
 </div>
 
