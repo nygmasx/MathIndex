@@ -1,21 +1,21 @@
 {# _layout.html.twig #}
 
-<div class="h-screen flex flex-col w-1/5">
+<div class="lg:h-screen lg:flex lg:flex-col lg:w-1/5 hidden">
 
-    <div class="flex gap-x-8 pt-8 pl-8">
+    <div class="lg:flex lg:gap-x-8 lg:pt-8 lg:pl-8">
         
-       <img src="assets/logo.png" alt="Logo du lycée Saint-Vincent" class="w-10 h-10 mt-4 ">
+       <img src="assets/logo.png" alt="Logo du lycée Saint-Vincent" class="lg:w-10 lg:h-10 lg:mt-4 ">
 
 
 
-        <div class="flex flex-col">
-            <h1 class="text-[23px] text-indigo-900 font-['Epilogue']">Math Index</h1>
-            <h2 class="text-[14px] text-gray-700 font-['Epilogue']">Lycée Saint-Vincent - Senlis</h2>
+        <div class="lg:flex lg:flex-col">
+            <h1 class="lg:text-[23px] lg:text-indigo-900 lg:font-['Epilogue']">Math Index</h1>
+            <h2 class="lg:text-[14px] lg:text-gray-700 lg:font-['Epilogue']">Lycée Saint-Vincent - Senlis</h2>
         </div>
 
     </div>
 
-     <div class="flex  flex-col gap-[10px] mt-10 ml-8 h-[525px]">
+     <div class="lg:flex  lg:flex-col lg:gap-[10px] lg:mt-10 lg:ml-8 lg:h-[525px]">
     
         {% include "layout/_menu.html.twig" with {
             image_name : "assets/home_icon.png",
@@ -44,7 +44,7 @@
 
     </div>
 
-    <div class="top-0 ml-8 bg-gray-200 rounded-md">
+    <div class="lg:top-0 lg:ml-8 lg:bg-gray-200 lg:rounded-md">
 
         {% include "layout/_menu.html.twig" with {
                 image_name : "assets/disconnect_icon.png",
