@@ -1,7 +1,5 @@
 {# _menu-responsive.html.twig #}
 
-<div class="">
-
     {# Première partie du menu avec profil et menu burger #}
 
      
@@ -25,6 +23,15 @@
                         </div>
                         
                     </nav>
+            </div>
+
+            <div class="flex">
+
+                {% include "layout/_composant-menu-responsive.html.twig" with {
+                default_img : "assets/home_icon.png",
+                menu_name : "",
+                } %}
+
             </div>
 
             
