@@ -1,24 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Recherchez un exercice {% endblock %}
+{% block title %}Recherchez un exercice
+{% endblock %}
 
 {% block body %}
 	<div class="flex w-full">
 		{% include 'layout/_aside.html.twig' %}
 
 
-<div class="flex flex-col w-full">
+		<div class="flex flex-col w-full">
 			{% include 'layout/_top.html.twig' %}
 
 
-			<div class="bg-slate-200 flex flex-col items-center h-full font-['Epilogue'] ">
+			<div class="bg-slate-200 flex flex-col items-center  font-['Epilogue'] ">
 				<div class="w-full text-center md:w-[90%] lg:text-start">
-					<h1 class="text-3xl md:text-4xl font-medium text-center lg:text-start text-blue-950 p-4">Rechercher un exercice</h1>
+					<h1 class="text-2xl	 md:text-4xl font-medium text-center lg:text-start text-blue-950 p-4">Rechercher un exercice</h1>
 				</div>
-				<div class="bg-white rounded-md	 w-[85%] md:w-[90%] lg:h-[75%] mx-0 p-0 mt-4 md:mt-10 lg:mt-6">
+				<div class="bg-white rounded-md	 w-[90%] md:w-[90%] lg:h-[75%] mx-0 p-3">
+					<div class="flex flex-col	gap-2	 ">
+						<div class="flex flex-col text-gray-500	">
+							<p class="font-medium text-gray-600">Niveau :</p>
+							<select name="niveau" id="niveau-exo" class="text-gray-500 rounded-md border-gray-300 border border-solid h-11	w-2/4">
+								<option value="collège">Collège</option>
+								<option value="lycée">Lycée</option>
+								<option value="bts">BTS</option>
+								<option value="licence">Licence</option>
+							</select>
+						</div>
+						<div class="flex flex-col text-gray-500	">
+							<p class="font-medium text-gray-600">Thématique :</p>
+							<select name="thematique" id="thematique" class="text-gray-500 rounded-md border-gray-300 border border-solid h-11	w-2/4">
+								<option value="base">Analyse</option>
+								<option value="lycée">Géométrie</option>
+								<option value="bts">Probabilités et statistiques</option>
+								<option value="licence">Suites</option>
+							</select>
+						</div>
+						<div class="flex flex-col text-gray-500	">
+							<p class="font-medium text-gray-600">Mots clés :</p>
+							<input class="text-gray-500 rounded-md border-gray-300 border border-solid h-11	w-3/4 p-2 outline-none	"></input>
+						</div>
+						<div class="flex justify-center	mt-7	">
+						<button class=" bg-gray-100	 font-medium text-gray-600 rounded-md border-gray-300 border border-solid h-11	w-3/4">Rechercher</button>
+						</div>
+					</div>
 				</div>
 
-				
+
 			</div>
 		</div>
 	</div>
